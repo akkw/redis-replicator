@@ -40,7 +40,7 @@ import java.net.URISyntaxException;
 public class RdbBackupExample {
     public static void main(String[] args) throws IOException, URISyntaxException {
 
-        final OutputStream out = new BufferedOutputStream(new FileOutputStream(new File("/path/to/dump.rdb")));
+        final OutputStream out = new BufferedOutputStream(new FileOutputStream(new File("/Users/qiangzhiwei/Data/redis/rdb/dump.rdb")));
         final RawByteListener rawByteListener = new RawByteListener() {
             @Override
             public void handle(byte... rawBytes) {
@@ -74,7 +74,7 @@ public class RdbBackupExample {
         replicator.open();
 
         //check rdb file
-        replicator = new RedisReplicator("redis:///path/to/dump.rdb");
+        replicator = new RedisReplicator("redis:/Users/qiangzhiwei/Data/redis/rdb/dump.rdb");
         replicator.addEventListener(new EventListener() {
             @Override
             public void onEvent(Replicator replicator, Event event) {
